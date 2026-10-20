@@ -29,8 +29,10 @@ jobs:
           --health-retries 5
 
     env:
-      DB_URL: jdbc:postgresql://localhost:5432/planification
-      DB_USER: postgres
+      DB_HOST: localhost
+      DB_PORT_postgres: 5432
+      DB_NAME_postgres: planification
+      DB_USERNAME_postgres: postgres
       DB_PASSWORD: postgres
 
     steps:
