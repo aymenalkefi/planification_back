@@ -9,6 +9,9 @@ on:
 jobs:
   build-test:
     runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: eplanification
 
     services:
       postgres:
@@ -40,6 +43,7 @@ jobs:
           distribution: temurin
           java-version: 21
           cache: maven
+          cache-dependency-path: eplanification/pom.xml
 
       - name: Build et tests
         run: mvn -B clean verify
